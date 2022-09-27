@@ -1,6 +1,6 @@
 import { Stack } from './stack'
 
-describe.only('test stack functionality', () => {
+describe.skip('test stack functionality', () => {
   it('should be empty when initialized', () => {
     const stack = new Stack(10)
     const isEmpty = stack.isEmpty()
