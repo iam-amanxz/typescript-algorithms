@@ -34,29 +34,19 @@ export class Queue<T> {
     this._queue = [] as T[]
   }
 
-  get stack() {
+  get queue() {
     return this._queue
   }
 
-  // Check if the queue is full
   isFull(): boolean {
-    // front should be at 0 index
-    // rear should be 1 index less than the queue capacity
     return this._front === 0 && this._rear === this._capacity - 1
   }
 
-  // Check if the queue is empty
   isEmpty(): boolean {
-    // front should be -1
     return this._front === -1
   }
 
-  // Add an element to the end of the queue
   enqueue(item: T): boolean {
-    // check if the queue is full
-    // for the first element, set the value of FRONT to 0
-    // increase the REAR index by 1
-    // add the new element in the position pointed to by REAR
     if (this.isFull()) {
       console.log('Failed: Maximum capacity reached')
       return false
@@ -70,12 +60,7 @@ export class Queue<T> {
     return true
   }
 
-  // Remove an element from the start of the queue
   dequeue(): boolean {
-    // check if the queue is empty
-    // return the value pointed by FRONT
-    // increase the FRONT index by 1
-    // for the last element, reset the values of FRONT and REAR to -1
     if (this.isEmpty()) {
       console.log('Failed: Queue is already empty')
       return false
@@ -90,7 +75,6 @@ export class Queue<T> {
     return true
   }
 
-  // Get the value of the front of the queue without removing it
   peek() {
     if (this.isEmpty()) {
       console.log('Failed: Queue is empty')

@@ -22,7 +22,7 @@ describe.only('test queue functionality', () => {
     queue.enqueue(2)
     queue.enqueue(3)
 
-    expect(queue.stack).toStrictEqual([2, 3])
+    expect(queue.queue).toStrictEqual([2, 3])
   })
 
   it('should remove items from the queue', () => {
@@ -35,7 +35,7 @@ describe.only('test queue functionality', () => {
     queue.dequeue()
     queue.dequeue()
 
-    expect(queue.stack).toStrictEqual(['c', 'd', 'e'])
+    expect(queue.queue).toStrictEqual(['c', 'd', 'e'])
   })
 
   it('should not allow to add more item than the capacity', () => {
