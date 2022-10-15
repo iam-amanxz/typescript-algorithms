@@ -1,6 +1,6 @@
 import { Queue } from './queue'
 
-describe.only('test queue functionality', () => {
+describe('test queue functionality', () => {
   it('should be empty when initialized', () => {
     const queue = new Queue(10)
     const isEmpty = queue.isEmpty()
